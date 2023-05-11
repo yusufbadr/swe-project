@@ -18,6 +18,9 @@ public class Item {
     private double discountAmount;
     private ItemStatus status;
     private int quantity;
+//    public Item(){
+//        this.name = "NULL";
+//    }
 
     public Item(String name, String category, String description, String brand, double price, UnitType unitType,
                 double discountAmount, ItemStatus status, int quantity) {
