@@ -18,6 +18,7 @@ public class Item {
     private double discountAmount;
     private ItemStatus status;
     private int quantity;
+
 //    public Item(){
 //        this.name = "NULL";
 //    }
