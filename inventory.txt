@@ -6,7 +6,7 @@ BrandA
 SEALED
 5.0
 ONSALE
-20
+1
 Twixs
 CategoryB
 DescriptionB
@@ -15,7 +15,7 @@ BrandB
 SEALED
 1.0
 ONSALE
-10
+7
 Gelooo
 CategoryC
 DescriptionC
@@ -24,7 +24,7 @@ BrandC
 SEALED
 11.0
 ONSALE
-100
+96
 Eclear
 CategoryD
 DescriptionD
@@ -33,7 +33,7 @@ BrandD
 SEALED
 11.0
 ONSALE
-100
+96
 Tofix
 CategoryE
 DescriptionE
@@ -42,4 +42,4 @@ BrandE
 SEALED
 1.5
 ONSALE
-109
+106

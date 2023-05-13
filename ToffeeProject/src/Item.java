@@ -36,8 +36,11 @@ public class Item {
         this.status = status;
         this.quantity = quantity;
     }
+    public Item copy() {
+        return new Item(name, category, description, brand, price, unitType, discountAmount, status, quantity);
+    }
 
-    public String getName() {
+        public String getName() {
         return name;
     }
 
