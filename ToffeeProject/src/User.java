@@ -4,7 +4,7 @@ public class User {
         VOUCHERS,
         EWALLET,
         COD,
-        LOYALTYPOINTS
+        LOYALTYPOINTSz
     }
 
     public void setName(String name) {
