@@ -6,7 +6,8 @@ public class User {
         COD,
         LOYALTYPOINTSz
     }
-    public User(){}
+    public User(){
+    }
 
     public User(ShoppingCart shoppingCart, String name, String email, String password, String phoneNumber, Address address, double loyaltyPoints, double walletBalance, double vouchers, LinkedList<Order> orderHistory) {
         this.shoppingCart = shoppingCart;

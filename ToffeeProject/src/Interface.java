@@ -1,4 +1,5 @@
 
+import java.net.spi.URLStreamHandlerProvider;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileWriter;
@@ -103,6 +104,7 @@ public class Interface {
                 newUser.setWalletBalance(Double.parseDouble(lineArray[11]));
                 LinkedList<Order> orderHistory = new LinkedList<Order>();
                 newUser.setOrderHistory(orderHistory);
+                newUser.setShoppingCart(new ShoppingCart());
                 currentUser = newUser;
                 return true;
             }
