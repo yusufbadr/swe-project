@@ -6,6 +6,20 @@ public class User {
         COD,
         LOYALTYPOINTSz
     }
+    public User(){}
+
+    public User(ShoppingCart shoppingCart, String name, String email, String password, String phoneNumber, Address address, double loyaltyPoints, double walletBalance, double vouchers, LinkedList<Order> orderHistory) {
+        this.shoppingCart = shoppingCart;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+        this.loyaltyPoints = loyaltyPoints;
+        this.walletBalance = walletBalance;
+        this.vouchers = vouchers;
+        this.orderHistory = orderHistory;
+    }
 
     public void setName(String name) {
         this.name = name;
@@ -61,6 +75,7 @@ public class User {
     private double loyaltyPoints;
     private double walletBalance;
 
+    // user car
     public String getName() {
         return name;
     }

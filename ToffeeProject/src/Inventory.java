@@ -12,6 +12,7 @@ public class Inventory {
     public LinkedList<Item> getItems(){
         return items;
     }
+
     public void setItems(LinkedList<Item> newItems){
         items = newItems;
     }
@@ -102,6 +103,12 @@ public class Inventory {
             reader.close();
         }catch (Exception e){
             System.out.println("Error while reading from inventory file");
+        }
+    }
+
+    public void viewProducts(){
+        for (Item item : items) {
+            System.out.println("-" + (items.indexOf(item) + 1) + " " + item.getName() + " " + item.getPrice() + " " + item.getQuantity());
         }
     }
 

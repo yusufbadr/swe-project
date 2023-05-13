@@ -14,6 +14,9 @@ public class ShoppingCart {
         if (addedItems.size()>0)
             addedItems.clear();
     }
+    void emptyCart(){
+        removeAllItems();
+    }
     User getUser(){
         return user;
     }

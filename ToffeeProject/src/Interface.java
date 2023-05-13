@@ -74,7 +74,7 @@ public class Interface {
         fw.close();
     }
 
-    public static boolean Login(String email, String password) throws IOException {
+    public static boolean  Login(String email, String password) throws IOException {
         Scanner sc = new Scanner(usersFile);
         while (sc.hasNextLine()) {
             String line = sc.nextLine();
@@ -101,7 +101,6 @@ public class Interface {
                 // set the loyalty points, wallet balance, vouchers, and order history attributes of the user object
                 newUser.setLoyaltyPoints(Double.parseDouble(lineArray[10]));
                 newUser.setWalletBalance(Double.parseDouble(lineArray[11]));
-                newUser.setVouchers(Double.parseDouble(lineArray[12]));
                 LinkedList<Order> orderHistory = new LinkedList<Order>();
                 newUser.setOrderHistory(orderHistory);
                 currentUser = newUser;
@@ -127,7 +126,55 @@ public class Interface {
             try {
                 if (Login(email, password)) {
                     System.out.println("Login successful!");
-                    
+
+                    // welcome user
+                    System.out.println("Welcome " + currentUser.getName() + "!");
+                    System.out.println("Please select an option:");
+                    System.out.println("1. View products");
+                    System.out.println("2. View cart");
+                    System.out.println("3. View orders");
+                    System.out.println("4. View vouchers");
+                    System.out.println("5. View wallet");
+                    System.out.println("6. View loyalty points");
+                    System.out.println("7. View profile");
+                    System.out.println("8. Logout");
+
+                    int choice2 = sc.nextInt();
+
+                    if(choice2 == 1) {
+                        Inventory inventory = new Inventory();
+                        inventory.viewProducts();
+                        // now we need to ask the user to select a product(s) and add it to the cart
+                        // user can select multiple products
+                        // user can select a product bu entering its index in the list and then entering the quantity
+                        // if user enters -1, then we exit the loop
+
+                        System.out.println("Please select a product by entering its index in the list:");
+                        int index = sc.nextInt();
+                        while(index != -1) {
+                            System.out.println("Please enter the quantity:");
+                            int quantity = sc.nextInt();
+                            Item selcted_item = new Item();
+                            // check if index is valid and if quantity is valid
+                            while(index < 0 || index >= inventory.getItems().size())
+                            {
+                                System.out.println("Invalid index!");
+                                System.out.println("Please select a product by entering its index in the list:");
+                                index = sc.nextInt();
+                            }
+                            while(quantity < 0 || quantity >= inventory.getItems().get(index).getQuantity())
+                            {
+                                System.out.println("Invalid quantity!");
+                                System.out.println("Please enter the quantity:");
+                                quantity = sc.nextInt();
+                            }
+                            selcted_item = inventory.getItems().get(index);
+                            selcted_item.setQuantity(quantity);
+                            currentUser.getShoppingCart().addItem(selcted_item);
+                            System.out.println("Please select a product by entering its index in the list:");
+                            index = sc.nextInt();
+                        }
+                    }
                 } else {
                     System.out.println("Login failed!");
                 }
