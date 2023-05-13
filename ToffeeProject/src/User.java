@@ -43,6 +43,16 @@ public class User {
         this.orderHistory = orderHistory;
     }
 
+    public ShoppingCart getShoppingCart() {
+        return shoppingCart;
+    }
+
+    public void setShoppingCart(ShoppingCart shoppingCart) {
+        this.shoppingCart = shoppingCart;
+    }
+
+    private ShoppingCart shoppingCart;
+
     private String name;
     private String email;
     private String password;
@@ -91,8 +101,5 @@ public class User {
 
     // order history
     private LinkedList<Order> orderHistory;
-
-
-
 
 }
