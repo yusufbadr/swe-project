@@ -2,7 +2,17 @@ import java.util.LinkedList;
 
 class Order {
     private double totalPrice;
-    //date ----
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    //stored as a string in the following format DD-MM-YYYY
+    private String date;
     private LinkedList<Item> items;
     private Address address;
 
